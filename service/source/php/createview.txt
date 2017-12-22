@@ -1,0 +1,1 @@
+create view wp as select myitem.id as id, myitem.itemid as itemid, tj.name as name, tj.level as level,tj.strength as strength,tj.type as type,tj.class as class ,myitem.userid as userid,myitem.itemnum as itemnum,myitem.exp as exp,myitem.date as date,myitem.work as work,user.user as user from myitem,tj,user where user.id=myitem.userid and tj.id=myitem.itemid;

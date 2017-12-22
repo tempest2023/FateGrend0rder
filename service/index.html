@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">
+<link rel="stylesheet" href="style/css/foundation.min.css">
+<link rel="stylesheet" href="style/css/font-awesome.min.css">
+<script src="source/script/jQuery-1.10.2.min.js"></script>
+<title>FGO</title>
+</head>
+
+<body>
+	<div class="fgo">
+		<div id="close_function_panel"></div>
+		<div id="login_shadow"></div>
+		<!--  登录model -->
+		<div class="panel panel-info" id="login">
+			<div class="panel-heading" id="login_title">用户登录</div><button class="btn btn-default" id="signup" style="right:2px;top:2px;position:absolute;">注册</button>
+			<div id="signin_panel"  class="panel-body" style="border:1px #bce8f1 solid;height:190px;margin-top:7px;margin-left:2px;margin-right:2px;">
+					<label for="username">账户<span id="login_info_text"></span></label>
+					<input id="in_username" name="username" class="form-control" placeholder="请输入用户名" />
+					<label for="pwd">密码</label>
+					<input id="in_pwd" type="password" name="pwd" class="form-control" placeholder="请输入密码" />
+					<div class="footer" style="bottom:2%;position:absolute;width:100%;">
+					<button type="button" id="login_button" class="btn btn-success" style="margin-left:32%;width:100px;height:50px;font-size:2em;" name="ok">登录</button>
+					</div>
+			</div>
+			<div id="signup_panel" class="panel-body" style="border:1px #bce8f1 solid;height:190px;margin-top:7px;margin-left:2px;margin-right:2px;display:none;">
+					<label for="username">账户<span id="signup_info_text"></span></label>
+					<input id="up_username" name="username" class="form-control" placeholder="请输入用户名" />
+					<label for="pwd">密码（输两次）</label>
+					<input id="up_pwd" type="password" name="pwd" class="form-control" placeholder="请输入密码" />
+					<br/>
+					<input id="up_repwd" type="password" name="repwd" class="form-control" placeholder="请输入密码" />
+					<div class="footer" style="bottom:2%;position:absolute;width:100%;">
+					<button type="button" id="signup_button" class="btn btn-success" style="margin-left:32%;width:100px;height:50px;font-size:2em;" name="ok">注册</button>
+					</div>
+			</div>
+		</div>
+		<audio id="all_bgm" src="style/music/all_bgm.mp3" loop="true" hidden="true" preload="auto" autoplay>
+		</audio>
+		<audio id="egg_bgm" src="style/music/egg_bgm.mp3" loop="false" hidden="true" preload="auto" >
+		</audio>
+		<audio id="login_bgm" src="style/music/login_bgm.mp3" loop="true" hidden="true" preload="auto">
+		</audio>
+			<div id="fgo_msg"></div>
+	<div id="zh" class="page">
+		<div class="zh_head">
+			<div id="zh_back_btn" class="mouse-hand"></div>
+			<div class="panel money text-noselect"><i class="glyphicon glyphicon-bitcoin"></i>SPHINX:<span id="my_sp">~</span></div>
+		</div>
+		<audio id="zh_bgm" src="style/music/zh_bgm.mp3" loop="true" hidden="true" preload="auto" >
+		</audio>
+		<div class="zh_btn">
+			<button class="btn btn-default" id="zh1" name="button" tabindex="-1"></button>
+			<button class="btn btn-default" id="zh10" name="button" tabindex="-1"></button>
+		</div>
+		<div id="zh_animate1"></div>
+		<div id="zh_animate2"></div>
+		<div id="zh_animate3"></div>
+		<div id="zh_animate4"></div>
+		<div id="zh_10_result">
+			<div class="zh_10_result_head">
+				<div id="zh_10_result_back_btn" class="mouse-hand"></div>
+			</div>
+			<div class="zh_10_result_item1"></div>
+			<div class="zh_10_result_item2"></div>
+			<div class="zh_10_result_item3"></div>
+			<div class="zh_10_result_item4"></div>
+			<div class="zh_10_result_item5"></div>
+			<div class="zh_10_result_item6"></div>
+			<div class="zh_10_result_item7"></div>
+			<div class="zh_10_result_item8"></div>
+			<div class="zh_10_result_item9"></div>
+			<div class="zh_10_result_item10"></div>
+		</div>
+		<div id="zh_card"></div>
+		<div id="zh_info" class="mouse-hand"></div>
+		<div class="panel panel-info" id="zh_attention">
+		  <div class="panel-heading">抽卡说明</div>
+		  <div class="panel-body" style="border:1px #bce8f1 solid;height:190px;margin-top:7px;margin-left:2px;margin-right:2px;">
+					1.单抽一次3块,十连一次30块.<br/>
+					2.十连保证必出一张金卡（强化材料、4星从者、5星从者）！<br/>
+					3.抽到的所有Servent和强化材料可以在物品中查看.<br/>
+					4.图鉴中有所有Servent和强化材料,点击可以查看初始卡面.<br/>
+					5.卡池详情和出货率请在公告中查看，或者点击右下角的召唤详情.
+					<div class="footer" style="bottom:2%;position:absolute;width:100%;">
+					<button type="button" id="ck_cancle" class="btn btn-info" style="margin-left:5%;width:100px;height:50px;font-size:2em;" name="cancle">取消</button>
+					<button type="button" id="ck_ok" class="btn btn-success" style="margin-left:25%;width:100px;height:50px;font-size:2em;" name="ok">决定</button>
+					</div>
+		  </div>
+		</div>
+		<div class="panel panel-info" id="zh_lack_money">
+			<div class="panel-heading">抽卡说明</div>
+			<div class="panel-body" style="border:1px #bce8f1 solid;height:100px;margin-top:7px;margin-left:2px;margin-right:2px;">
+						MASTER您缺乏足够的SPHINX$,请先去派遣从者打工吧！
+					<div class="footer" style="bottom:2%;position:absolute;width:100%;">
+					<button type="button" id="lack_money_cancle" class="btn btn-info" style="margin-left:23%;width:80px;height:40px;font-size:1.5em;" name="cancle">好的</button>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div id="tj" class="page">
+		<div class="shadow" id="tj_shadow"></div>
+		<div id="tj_head">
+			<div id="tj_back_btn" class="mouse-hand"></div>
+		</div>
+		<div id="tj_num">
+			<div id="tj_num_servent"></div>
+			<div id="tj_num_item"></div>
+		</div>
+		<div id="tj_body"></div>
+		<div id="tj_card"></div>
+	</div>
+	<div id="dg" class="page">
+		<div id="dg_head">
+			<div id="dg_back_btn" class="mouse-hand"></div>
+			<button id="dg_post" class="btn btn-success">打工派遣</button>
+			<button id="dg_check" class="btn btn-success">决定</button>
+		</div>
+		<div class="panel panel-info" id="dg_get_money">
+			<div class="panel-heading">打工结束</div>
+			<div class="panel-body" style="border:1px #bce8f1 solid;height:190px;margin-top:7px;margin-left:2px;margin-right:2px;">
+						<div id="dg_money_text"></div>
+					<div class="footer" style="bottom:2%;position:absolute;width:100%;">
+					<button type="button" id="dg_get_money_cancle" class="btn btn-info" style="margin-left:35%;width:80px;height:40px;font-size:1.5em;" name="cancle">知道了</button>
+					</div>
+			</div>
+		</div>
+		<div class="panel panel-info" id="buy_dg_block_model">
+			<div class="panel-heading">购买打工位</div>
+			<div class="panel-body" style="border:1px #bce8f1 solid;height:200px;margin-top:7px;margin-left:2px;margin-right:2px;">
+						<div id="dg_block_text" style="font-size:1.3em;font-weight:300;">你现在拥有2个打工位,共有0元,购买下一个打工位需要3000元,请问是否购买?</div>
+					<div class="footer" style="bottom:2%;position:absolute;width:100%;">
+						<button type="button" id="buy_dg_block_no" class="btn btn-info" style="margin-left:15%;width:80px;height:40px;font-size:1.5em;" name="cancle">取消</button>
+					<button type="button" id="buy_dg_block_yes" class="btn btn-success" style="margin-left:24%;width:80px;height:40px;font-size:1.5em;" name="cancle">购买</button>
+					</div>
+			</div>
+		</div>
+		<div id="dg_bottom_btn">
+			<button id="buy_dg_block" class="btn btn-info">购买打工位</button>
+			<button id="dg_info" class="btn btn-info">查看打工说明</button>
+		</div>
+		<div id="dg_cont" class="mouse-hand">
+			<div class="dg_box" id="dg_servent1">
+				<div class="dg_block_disable text-noselect">尚未开启</div>
+				<div id="dg_servent_text1" class="dg_servent_text text-noselect"></div>
+			</div>
+			<div class="dg_box" id="dg_servent2">
+				<div class="dg_block_disable text-noselect">尚未开启</div>
+				<div id="dg_servent_text2" class="dg_servent_text text-noselect"></div>
+			</div>
+			<div class="dg_box" id="dg_servent3">
+				<div class="dg_block_disable text-noselect">尚未开启</div>
+				<div id="dg_servent_text3" class="dg_servent_text text-noselect"></div>
+			</div>
+			<div class="dg_box" id="dg_servent4">
+				<div class="dg_block_disable text-noselect">尚未开启</div>
+				<div id="dg_servent_text4" class="dg_servent_text text-noselect"></div>
+			</div>
+			<div class="dg_box" id="dg_servent5">
+				<div class="dg_block_disable text-noselect">尚未开启</div>
+				<div id="dg_servent_text5" class="dg_servent_text text-noselect"></div>
+			</div>
+			<div class="dg_box" id="dg_servent6">
+				<div class="dg_block_disable text-noselect">尚未开启</div>
+				<div id="dg_servent_text6" class="dg_servent_text text-noselect"></div>
+			</div>
+			<div class="dg_box" id="dg_servent7">
+				<div class="dg_block_disable text-noselect">尚未开启</div>
+				<div id="dg_servent_text7" class="dg_servent_text text-noselect"></div>
+			</div>
+			<div class="dg_box" id="dg_servent8">
+				<div class="dg_block_disable text-noselect">尚未开启</div>
+				<div id="dg_servent_text8" class="dg_servent_text text-noselect"></div>
+			</div>
+		</div>
+		<div id="dg2">
+			<div id="dg_num">
+				<div id="dg_num_servent"></div>
+				<div id="dg_num_item"></div>
+			</div>
+			<div id="dg_body"></div>
+		</div>
+	</div>
+	<div id="qh" class="page">
+		<div id="qh2">
+			<div id="qh2_head">
+				<div id="qh2_back_btn" class="mouse-hand"></div>
+			</div>
+			<!-- 相当于item选择的head  -->
+			<div id="choose_item_head">
+				<div id="qh3_back_btn" class="mouse-hand"></div>
+				<button class="btn btn-info text-noselect" id="choose_item_ok">决定</button>
+			</div>
+			<div id="qh_num">
+				<div id="qh_num_servent"></div>
+				<div id="qh_num_item"></div>
+			</div>
+			<div id="qh_body"></div>
+		</div>
+		<div id="qh_head">
+			<div id="qh_back_btn" class="mouse-hand"></div>
+		</div>
+		<div id="qh_choose_card" class='mouse-hand'>
+		</div>
+		<div id="qh_choose_item" class="mouse-hand" value="0">
+			<div id="qh_littleitem1" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem2" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem3" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem4" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem5" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem6" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem7" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem8" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem9" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem10" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem11" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem12" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem13" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem14" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem15" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem16" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem17" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem18" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem19" data-item-id="0" class="qh_item_box"></div>
+			<div id="qh_littleitem20" data-item-id="0" class="qh_item_box"></div>
+		</div>
+		<div id="qh_level">~</div>
+		<div id="qh_level_all">~</div>
+		<div id="qh_exp">
+			<div id="qh_exp_get"></div>
+		</div>
+		<div id="qh_exp_remain">
+			0
+		</div>
+		<button id="qh_submit" class="btn btn-info">强化</button>
+	</div>
+	<div id="gg" class="page">
+		<div id="gg_head">
+			<div id="gg_back_btn" class="mouse-hand"></div>
+		</div>
+		<div id="gg_body">
+		</div>
+	</div>
+	<div id="wp" class="page">
+		<div class="shadow" id="wp_shadow"></div>
+		<div id="wp_head">
+			<div id="wp_back_btn" class="mouse-hand"></div>
+		</div>
+		<div id="wp_num">
+			<div id="wp_num_servent"></div>
+			<div id="wp_num_item"></div>
+		</div>
+		<div id="wp_body"></div>
+		<div id="wp_card"></div>
+	</div>
+	<div id='jy' class="page">
+		<div class="shadow" id="jy_shadow"></div>
+		<div class="panel panel-info" id="jy_info_model">
+			<div class="panel-heading">信息确认</div>
+			<div id="jy_info_panel" class="jy_panel_body">
+				<p id="jy_info_text" style="font-size:1.3em;text-align:center;"></p>
+				<div class="footer" style="bottom:2%;position:absolute;height:50px;width:100%;">
+					<button type="button" id="jy_info_ok" class="btn btn-success" style="float:left;margin-left:15%;width:100px;height:50px;font-size:2em;" name="ok">确认</button>
+					<button type="button" id="jy_info_cancle" class="btn btn-default" style="display:inline;margin-left:15%;width:100px;height:50px;font-size:2em;" >取消</button>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-info" id="jy_model">
+			<div class="panel-heading"><span id="jy_model_title">发布交易</span></div><button class="btn btn-warning" id="jy_change" style="right:2px;top:2px;position:absolute;font-size:1.2em;">管理</button>
+			<div id="jy_servent_add"  class="jy_panel_body" style="display:block;">
+					<label for="jy_sale_servent_list">选择出售英灵</label>
+					<div class="form-group has-warning" id="jy_sale_servent_div">
+							<select id="jy_sale_servent_list" name="jy_sale_servent_list" class="form-control" placeholder="请选择(正在打工的英灵不可选择)">
+								<option id="loading">请选择(正在打工的英灵不可选择)</option>
+							</select>
+					</div>
+					<label for="jy_price">售卖价格</label>
+					<div class="input-group has-warning" id="jy_price_div">
+						<span class="input-group-addon">$</span>
+						<input id="jy_price" name="jy_price" class="form-control" placeholder="请输入售卖价格(整数)" />
+						<span class="input-group-addon">.00</span>
+					</div>
+					<div class="footer" style="bottom:2%;position:absolute;height:50px;width:100%;">
+						<button type="button" id="jy_sell_servent_btn" class="btn btn-success" disabled style="float:left;margin-left:5%;width:150px;height:50px;font-size:2em;" name="ok">确认出售</button>
+						<button type="button" id="jy_button_cancel" class="btn btn-default" style="display:inline;margin-left:15%;width:100px;height:50px;font-size:2em;" >取消</button>
+					</div>
+			</div>
+			<div id="jy_manage_panel" class="jy_panel_body" style="display:none;">
+					<label for="jy_sold_servent_list">取消已出售英灵</label>
+					<div class="form-group has-warning" id="jy_sold_servent_div">
+							<select id="jy_sold_servent_list" name="jy_sold_servent_list" class="form-control" placeholder="请选择想要取消售卖的英灵">
+								<option id="loading">请选择想要取消售卖的英灵</option>
+							</select>
+					</div>
+					<div class="footer" style="bottom:2%;position:absolute;height:50px;width:100%;">
+						<button type="button" id="jy_sold_servent_btn" class="btn btn-success" disabled style="float:left;margin-left:5%;width:150px;height:50px;font-size:2em;" name="ok">撤销出售</button>
+						<button type="button" id="jy_button_cancel2" class="btn btn-default" style="display:inline;margin-left:15%;width:100px;height:50px;font-size:2em;" >取消</button>
+					</div>
+			</div>
+		</div>
+		<div id="jy_head">
+			<div id="jy_back_btn" class="mouse-hand"></div>
+			<div id="jy_change_item"><button id="jy_change_item_btn" class="btn btn-warning">发布交易</button></div>
+		</div>
+		<div id="jy_body">
+			<div class="jy_item" id="jy_item1">
+				<div class="jy_pic" id="jy_pic1"></div>
+				<div class="jy_sold_name" id="jy_sold_name1">admin</div><div class="jy_servent_level">LV: 23</div>
+				<div class="jy_servent_name" id="jy_servent_name1">
+					<span class="jy_level" id="jy_level1">从者 网络错误,加载中</span>
+				</div>
+				<div class="jy_price" id="jy_price1">价格 0 SPHINX$</div>
+				<div class="jy_confirm" id="jy_confirm1"><button class="btn btn-success jy_confirm_button" id="jy_confirm_button1" disabled>购买</button></div>
+			</div>
+		</div>
+	</div>
+	<div class="function_pannel">
+		<button class="btn btn-info text-noselect" id="zh_page" style="background-color:#2185D0;border:1px #2185D0 solid;">召唤</button>
+		<button class="btn btn-info text-noselect" id="tj_page" style="background-color:#B5CC18;border:1px #B5CC18 solid;">图鉴</button>
+		<button class="btn btn-info text-noselect" id="dg_page" style="background-color:#E03997;border:1px #E03997 solid;">打工</button>
+		<button class="btn btn-info text-noselect" id="qh_page" style="background-color:#FBBD08;border:1px #FBBD08 solid;">强化</button>
+		<button class="btn btn-info text-noselect" id="gg_page" style="background-color:#767676;border:1px #767676 solid;">公告</button>
+		<button class="btn btn-info text-noselect" id="wp_page" style="background-color:#A333C8;border:1px #A333C8 solid;">物品</button>
+		<button class="btn btn-info text-noselect" id="jy_page" style="background-color:#F2711C;border:1px #F2711C solid;">交易</button>
+		<span id="all_voice" value="1"><i id="voice_i" class="glyphicon glyphicon-volume-up"></i></span>
+	</div>
+</div>
+<!-- script -->
+<script src="source/script/jquery.cookie.js"></script>
+<script src="source/script/highlight.min.js"></script>
+<script src="source/script/jquery-stars.js"></script>
+<script src="source/script/Notify.js"></script>
+<script src="source/script/fgo.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

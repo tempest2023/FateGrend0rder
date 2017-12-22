@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applicationConfig>
+	<add key="src" value="application/Plugin/FGO/service/index.html"></add>
+	<add key="size" value="0"></add>
+	<add key="width" value="982px"></add>
+	<add key="height" value="630px"></add>
+</applicationConfig>
