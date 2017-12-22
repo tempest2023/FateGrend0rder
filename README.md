@@ -1,14 +1,18 @@
 # FateGrend0rder
 FGO抽卡模拟器，页游。闲暇之时做的，为了满足自己集齐全SSR的愿望，和满破所有低星级卡的愿望。
+<br/>
 代码部署在一个测试服务器上，有兴趣的月厨可以来抽卡，但是服务器很卡，图片加载效果不是很好。
+<br/>
 传送门:http://ksin74.duapp.com
+<br/>
 游戏内截图
-![召唤]https://github.com/623059008/FateGrend0rder/doc_images/zh.jpg
-![图鉴]https://github.com/623059008/FateGrend0rder/doc_images/tj.jpg
-![打工]https://github.com/623059008/FateGrend0rder/doc_images/dg.jpg
-![强化]https://github.com/623059008/FateGrend0rder/doc_images/qh.jpg
-![公告]https://github.com/623059008/FateGrend0rder/doc_images/gg.jpg
-![交易]https://github.com/623059008/FateGrend0rder/doc_images/jy.jpg
+<br/>
+![召唤](https://github.com/623059008/FateGrend0rder/doc_images/zh.jpg)
+![图鉴](https://github.com/623059008/FateGrend0rder/doc_images/tj.jpg)
+![打工](https://github.com/623059008/FateGrend0rder/doc_images/dg.jpg)
+![强化](https://github.com/623059008/FateGrend0rder/doc_images/qh.jpg)
+![公告](https://github.com/623059008/FateGrend0rder/doc_images/gg.jpg)
+![交易](https://github.com/623059008/FateGrend0rder/doc_images/jy.jpg)
 
 # 代码大致结构
 >Service
