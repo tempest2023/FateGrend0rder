@@ -7,12 +7,12 @@ FGO抽卡模拟器，页游。闲暇之时做的，为了满足自己集齐全SS
 <br/>
 游戏内截图
 <br/>
-![召唤](https://github.com/623059008/FateGrend0rder/doc_images/zh.jpg)
-![图鉴](https://github.com/623059008/FateGrend0rder/doc_images/tj.jpg)
-![打工](https://github.com/623059008/FateGrend0rder/doc_images/dg.jpg)
-![强化](https://github.com/623059008/FateGrend0rder/doc_images/qh.jpg)
-![公告](https://github.com/623059008/FateGrend0rder/doc_images/gg.jpg)
-![交易](https://github.com/623059008/FateGrend0rder/doc_images/jy.jpg)
+![召唤](https://github.com/623059008/FateGrend0rder/raw/master/doc_images/zh.jpg)
+![打工](https://github.com/623059008/FateGrend0rder/raw/master/doc_images/dg.jpg)
+![图鉴](https://github.com/623059008/FateGrend0rder/raw/master/doc_images/tj.jpg)
+![强化](https://github.com/623059008/FateGrend0rder/raw/master/doc_images/qh.jpg)
+![公告](https://github.com/623059008/FateGrend0rder/raw/master/doc_images/gg.jpg)
+![交易](https://github.com/623059008/FateGrend0rder/raw/master/doc_images/jy.jpg)
 
 # 代码大致结构
 >Service
