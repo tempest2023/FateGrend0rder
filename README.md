@@ -3,7 +3,7 @@ FGO抽卡模拟器，页游。闲暇之时做的，为了满足自己集齐全SS
 <br/>
 代码部署在一个测试服务器上，有兴趣的月厨可以来抽卡，但是服务器很卡，图片加载效果不是很好。
 <br/>
-传送门:http://ksin74.duapp.com
+传送门:http://storygame.top/game/service/fgo.html
 <br/>
 游戏内截图
 <br/>
