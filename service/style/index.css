@@ -6,220 +6,1831 @@
  * time:2017.10.27
 */
 @charset "utf-8";
-body{font-family:"微软雅黑","宋体";font-size:12px;margin:0;background:#f0f0f0;height:100%;overflow-x: hidden;overflow-y: hidden;}
-input{outline:none;font-family:"微软雅黑", "宋体";_line-height:23px;*line-height:25px;*vertical-align:middle;}
-button{font-family:"微软雅黑", "宋体";*vertical-align:middle;}
-textarea{outline:none;resize:none;outline:none;font-family:"微软雅黑", "宋体";font-size:12px;}
-form,ol,ul,li{list-style-type:none;text-decoration:none;font-size:12px;font-weight:100;font-style:normal;margin:0;padding:0;}
-a{text-decoration:none;outline:none;}
-img{border:none;}
+
+body {
+  font-family: "微软雅黑", "宋体";
+  font-size: 12px;
+  margin: 0;
+  background: #f0f0f0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+input {
+  outline: none;
+  font-family: "微软雅黑", "宋体";
+  _line-height: 23px;
+  *line-height: 25px;
+  *vertical-align: middle;
+}
+
+button {
+  font-family: "微软雅黑", "宋体";
+  *vertical-align: middle;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  outline: none;
+  font-family: "微软雅黑", "宋体";
+  font-size: 12px;
+}
+
+form, ol, ul, li {
+  list-style-type: none;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 100;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  border: none;
+}
+
 /***--------------------------fgo-------------------------------------***/
-.fgo{float:left;position:relative;width:980px;height:603px;overflow:hidden;}
-.page{display:none;}
-.page.active{display:block;}
-.pos{border: 1px #FF99CC solid;}/*For Position Test*/
-.mouse-hand:hover{cursor:pointer;}
-.text-noselect{cursor: default; -ms-user-select: none;user-select: none;}
-#login{position: absolute;background:#FFF;width:400px;height:300px;display:block;z-index:9999;display: none;top:150px;left:300px;box-shadow: 0px 3px 3px 5px #888888;-moz-box-shadow: 0px 3px 3px 5px #888888;-webkit-box-shadow: 0px 3px 3px 5px #888888;}
-#login_shadow{background-color:#666;width:980px;height:603px;z-index:9995;opacity: 0.6;position: absolute;display:none;}
-#close_function_panel{background-color:#eee;width:980px;height:533px;z-index:6;opacity: 0.2;position: absolute;display:none;}
-button:enabled:hover{
-  -webkit-animation:shank_btn 1s .1s ease both;
-  -moz-animation:shank_btn 1s .1s ease both;
+.fgo {
+  float: left;
+  position: relative;
+  width: 980px;
+  height: 603px;
+  overflow: hidden;
 }
-@-webkit-keyframes shank_btn{
-	0% {
-	-webkit-transform:scale(1)
+
+.page {
+  display: none;
 }
-10%,20% {
-	-webkit-transform:scale(0.8) rotate(-2deg)
+
+.page.active {
+  display: block;
 }
-30%,50%,70%,90% {
-	-webkit-transform:scale(1.1) rotate(2deg)
+
+.pos {
+  border: 1px #FF99CC solid;
 }
-40%,60%,80% {
-	-webkit-transform:scale(1.1) rotate(-2deg)
+
+/*For Position Test*/
+.mouse-hand:hover {
+  cursor: pointer;
 }
-100% {
-	-webkit-transform:scale(1) rotate(0)
+
+.text-noselect {
+  cursor: default;
+  -ms-user-select: none;
+  user-select: none;
 }
+
+#login {
+  position: absolute;
+  background: #FFF;
+  width: 400px;
+  height: 300px;
+  display: block;
+  z-index: 9999;
+  display: none;
+  top: 150px;
+  left: 300px;
+  box-shadow: 0px 3px 3px 5px #888888;
+  -moz-box-shadow: 0px 3px 3px 5px #888888;
+  -webkit-box-shadow: 0px 3px 3px 5px #888888;
 }
-#fgo_msg{width:100%;height:80px;position:absolute;top:0;z-index:999;display:none;}
+
+#login_shadow {
+  background-color: #666;
+  width: 980px;
+  height: 603px;
+  z-index: 9995;
+  opacity: 0.6;
+  position: absolute;
+  display: none;
+}
+
+#close_function_panel {
+  background-color: #eee;
+  width: 980px;
+  height: 533px;
+  z-index: 6;
+  opacity: 0.2;
+  position: absolute;
+  display: none;
+}
+
+button:enabled:hover {
+  -webkit-animation: shank_btn 1s .1s ease both;
+  -moz-animation: shank_btn 1s .1s ease both;
+}
+
+@-webkit-keyframes shank_btn {
+  0% {
+    -webkit-transform: scale(1)
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.8) rotate(-2deg)
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(2deg)
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-2deg)
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0)
+  }
+}
+
+#fgo_msg {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  display: none;
+}
+
 /***--------------------------召唤页面-------------------------------------***/
-#zh{background:url(images/zh1.jpg);width:980px;height:603px!important;z-index:0;}
-#zh_animate1{position: absolute;background:url(images/zh_one1.jpg);width:980px;height:603px;display:none;z-index:1;}
-#zh_animate2{position: absolute;background:url(images/zh_one2.jpg);width:980px;height:603px;display:none;z-index:2;}
-#zh_animate3{position: absolute;background:url(images/zh_one3.jpg);width:980px;height:603px;display:none;z-index:3;}
-#zh_animate4{position: absolute;background:url(images/zh_one4.jpg);width:980px;height:603px;display:none;z-index:4;}
-#zh_10_result{position: absolute;background:url(images/zh_all.jpg);width:980px;height:603px;display:none;z-index:5;}
-#zh_10_result_head{position:absolute;top:0%;width:100%;height: 65px;margin-left:0px;margin-right:0;}
-#zh_10_result_back_btn{width:130px;height:70px;margin-left:10px;margin-top:2.5px;}
-#zh_10_result_item1{position:fixed;left:67px;top:157px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item2{position:fixed;left:211px;top:157px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item3{position:fixed;left:355px;top:157px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item4{position:fixed;left:499px;top:157px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item5{position:fixed;left:643px;top:157px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item6{position:fixed;left:787px;top:157px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item7{position:fixed;left:211px;top:346px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item8{position:fixed;left:355px;top:346px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item9{position:fixed;left:499px;top:346px;width:127px;height:152px;border-radius: 5px;}
-#zh_10_result_item10{position:fixed;left:643px;top:346px;width:127px;height:152px;border-radius: 5px;}
-.zh_10_result_item_text{width:123px;bottom:10px;position: absolute;text-align: center;font-weight:600;opacity: 0.8;background-color: #555;}
-#zh_card    {position: absolute;background:url(images/card/servent_five_1.jpg);width:240px;height:411px;display:none;z-index:5;top:50px;left:370px;}
-#zh_attention{position: absolute;background:#FFF;width:400px;height:300px;display:none;z-index:1;top:150px;left:300px;box-shadow: 0px 3px 3px 5px #888888;-moz-box-shadow: 0px 3px 3px 5px #888888;-webkit-box-shadow: 0px 3px 3px 5px #888888;}
-#zh_lack_money{position: absolute;background:#FFF;width:250px;height:200px;display:none;z-index:1;top:200px;left:380px;box-shadow: 0px 1px 1px 3px #888888;-moz-box-shadow: 0px 3px 3px 5px #888888;-webkit-box-shadow: 0px 3px 3px 5px #888888;}
-.zh_btn{position:absolute;bottom:13.5%;width:100%;margin-left:auto;margin-right:auto;}
-#zh1{margin-left:25%;width:200px;height:85px;font-size:2em;border-radius:25px;background: url('images/zh1_button.jpg');}
-#zh10{margin-left:8.5%;width:200px;height:85px;font-size:2em;border-radius:25px;background: url('images/zh10_button.jpg');}
-.zh_head{position:absolute;top:0%;width:100%;height: 65px;margin-left:0px;margin-right:0;}
-#zh_back_btn{width:130px;height:70px;margin-left:10px;margin-top:2.5px;}
-.money{position:absolute;width:400px;height:60px;margin-left:27%;margin-top:2.5px;padding-top:3px;top:5px;font-size:3em;text-align: center;color:#666;background:url(images/money_background.jpg);background-repeat: repeat;color:#000;}
-.money i{color:#FFCC00;}
-#zh_info{position:absolute;left:20px;width:130px;height:70px;bottom:2px;border-radius:5px;z-index:0;}
-#my_sp{text-shadow:1px 1px 1px #333;color:#FF9900;margin-left:10px;}
+#zh {
+  background: url('https://i.loli.net/2018/12/13/5c1233c216276.jpg');
+  width: 980px;
+  height: 603px !important;
+  z-index: 0;
+}
+
+#zh_animate1 {
+  position: absolute;
+  background: url('https://i.loli.net/2018/12/13/5c12336eedb65.jpg');
+  width: 980px;
+  height: 603px;
+  display: none;
+  z-index: 1;
+}
+
+#zh_animate2 {
+  position: absolute;
+  background: url('https://i.loli.net/2018/12/13/5c12337cd41ff.jpg');
+  width: 980px;
+  height: 603px;
+  display: none;
+  z-index: 2;
+}
+
+#zh_animate3 {
+  position: absolute;
+  background: url('https://i.loli.net/2018/12/13/5c123390c93d6.jpg');
+  width: 980px;
+  height: 603px;
+  display: none;
+  z-index: 3;
+}
+
+#zh_animate4 {
+  position: absolute;
+  background: url('https://i.loli.net/2018/12/13/5c12339f245e6.jpg');
+  width: 980px;
+  height: 603px;
+  display: none;
+  z-index: 4;
+}
+
+#zh_10_result {
+  position: absolute;
+  background: url('https://i.loli.net/2018/12/13/5c12332b68b15.jpg');
+  width: 980px;
+  height: 603px;
+  display: none;
+  z-index: 5;
+}
+
+#zh_10_result_head {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0px;
+  margin-right: 0;
+}
+
+#zh_10_result_back_btn {
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+}
+
+#zh_10_result_item1 {
+  position: fixed;
+  left: 67px;
+  top: 157px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item2 {
+  position: fixed;
+  left: 211px;
+  top: 157px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item3 {
+  position: fixed;
+  left: 355px;
+  top: 157px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item4 {
+  position: fixed;
+  left: 499px;
+  top: 157px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item5 {
+  position: fixed;
+  left: 643px;
+  top: 157px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item6 {
+  position: fixed;
+  left: 787px;
+  top: 157px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item7 {
+  position: fixed;
+  left: 211px;
+  top: 346px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item8 {
+  position: fixed;
+  left: 355px;
+  top: 346px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item9 {
+  position: fixed;
+  left: 499px;
+  top: 346px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+#zh_10_result_item10 {
+  position: fixed;
+  left: 643px;
+  top: 346px;
+  width: 127px;
+  height: 152px;
+  border-radius: 5px;
+}
+
+.zh_10_result_item_text {
+  width: 123px;
+  bottom: 10px;
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0.8;
+  background-color: #555;
+}
+
+#zh_card {
+  position: absolute;
+  background: url(images/card/servent_five_1.jpg);
+  width: 240px;
+  height: 411px;
+  display: none;
+  z-index: 5;
+  top: 50px;
+  left: 370px;
+}
+
+#zh_attention {
+  position: absolute;
+  background: #FFF;
+  width: 400px;
+  height: 300px;
+  display: none;
+  z-index: 1;
+  top: 150px;
+  left: 300px;
+  box-shadow: 0px 3px 3px 5px #888888;
+  -moz-box-shadow: 0px 3px 3px 5px #888888;
+  -webkit-box-shadow: 0px 3px 3px 5px #888888;
+}
+
+#zh_lack_money {
+  position: absolute;
+  background: #FFF;
+  width: 250px;
+  height: 200px;
+  display: none;
+  z-index: 1;
+  top: 200px;
+  left: 380px;
+  box-shadow: 0px 1px 1px 3px #888888;
+  -moz-box-shadow: 0px 3px 3px 5px #888888;
+  -webkit-box-shadow: 0px 3px 3px 5px #888888;
+}
+
+.zh_btn {
+  position: absolute;
+  bottom: 13.5%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#zh1 {
+  margin-left: 25%;
+  width: 200px;
+  height: 85px;
+  font-size: 2em;
+  border-radius: 25px;
+  background: url('https://i.loli.net/2018/12/13/5c1233b160fb5.jpg');
+}
+
+#zh10 {
+  margin-left: 8.5%;
+  width: 200px;
+  height: 85px;
+  font-size: 2em;
+  border-radius: 25px;
+  background: url('https://i.loli.net/2018/12/13/5c1233d7202b7.jpg');
+}
+
+.zh_head {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0px;
+  margin-right: 0;
+}
+
+#zh_back_btn {
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+}
+
+.money {
+  position: absolute;
+  width: 400px;
+  height: 60px;
+  margin-left: 27%;
+  margin-top: 2.5px;
+  padding-top: 3px;
+  top: 5px;
+  font-size: 3em;
+  text-align: center;
+  color: #666;
+  background: url('https://i.loli.net/2018/12/13/5c12322d5dd35.jpg');
+  background-repeat: repeat;
+  color: #000;
+}
+
+.money i {
+  color: #FFCC00;
+}
+
+#zh_info {
+  position: absolute;
+  left: 20px;
+  width: 130px;
+  height: 70px;
+  bottom: 2px;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+#my_sp {
+  text-shadow: 1px 1px 1px #333;
+  color: #FF9900;
+  margin-left: 10px;
+}
+
 /***--------------------------图鉴页面--------------------------------------***/
-#tj{background:url(images/tj.jpg);width:980px;height:603px;z-index:0;}
-.shadow{background-color:#666;width:980px;height:603px;z-index:4;opacity: 0.6;position: absolute;display:none;}
-#tj_head{position:absolute;top:0%;width:100%;height: 65px;margin-left:0;margin-right:0;}
-#tj_back_btn{width:130px;height:70px;margin-left:10px;margin-top:2.5px;}
-#tj_num{width:100%;height:70px;position:absolute;margin-top:73px;}
-#tj_num_servent{width:45px;position:absolute;height:50%;margin-left:19%;margin-top:15px;color:white;text-align: center;font-weight: bold;font-size: 2.1em;}
-#tj_num_item{width:40px;position:absolute;height:50%;margin-left:50.5%;margin-top:18px;color:white;text-align: center;font-weight: bold;font-size: 2.1em;}
-#tj_body{position: absolute;width:938px;height:461px;margin-left:40px;top:140px;background:url(images/tj_background.jpg);background-repeat: repeat-x;z-index:1;overflow-y: auto;}
-.tj_item{width:127px;height:153px;overflow: hidden;border-radius:15px;position:relative;margin-top:2%;margin-left: 10px;margin-right:10px;display:inline-block;border:4px #FFCC00 solid;border-bottom:0px #000 solid;z-index:2;}
-.tj_item_text{width:127px;bottom:10px;position: absolute;text-align: center;font-weight:600;opacity: 0.8;background-color: #555;}
-.tj_item_bottom_img{position:absolute;bottom:0px;width:100%;height:10px;z-index:3;}
-#tj_card    {position: absolute;background:url(images/card/servent_five_1.jpg);width:240px;height:411px;display:none;z-index:5;top:150px;left:370px;}
+#tj {
+  background: url('https://i.loli.net/2018/12/13/5c12330745888.jpg');
+  width: 980px;
+  height: 603px;
+  z-index: 0;
+}
+
+.shadow {
+  background-color: #666;
+  width: 980px;
+  height: 603px;
+  z-index: 4;
+  opacity: 0.6;
+  position: absolute;
+  display: none;
+}
+
+#tj_head {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#tj_back_btn {
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+}
+
+#tj_num {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  margin-top: 73px;
+}
+
+#tj_num_servent {
+  width: 45px;
+  position: absolute;
+  height: 50%;
+  margin-left: 19%;
+  margin-top: 15px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+#tj_num_item {
+  width: 40px;
+  position: absolute;
+  height: 50%;
+  margin-left: 50.5%;
+  margin-top: 18px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+#tj_body {
+  position: absolute;
+  width: 938px;
+  height: 461px;
+  margin-left: 40px;
+  top: 140px;
+  background: url('https://i.loli.net/2018/12/13/5c12329572863.jpg');
+  background-repeat: repeat-x;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.tj_item {
+  width: 127px;
+  height: 153px;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  border: 4px #FFCC00 solid;
+  border-bottom: 0px #000 solid;
+  z-index: 2;
+}
+
+.tj_item_text {
+  width: 127px;
+  bottom: 10px;
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0.8;
+  background-color: #555;
+}
+
+.tj_item_bottom_img {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10px;
+  z-index: 3;
+}
+
+#tj_card {
+  position: absolute;
+  background: url(images/card/servent_five_1.jpg);
+  width: 240px;
+  height: 411px;
+  display: none;
+  z-index: 5;
+  top: 150px;
+  left: 370px;
+}
+
 /***--------------------------强化页面--------------------------------------***/
-#qh{z-index:0;background:url(images/qh1.jpg);width:980px;height:603px;}
-#qh2{z-index:1;background:url(images/qh2.jpg);width:980px;height:603px;display:none;}
-#qh_head{z-index:0;position:absolute;top:0%;width:100%;height: 65px;margin-left:0;margin-right:0;}
-#qh_back_btn{z-index:0;width:130px;height:70px;margin-left:10px;margin-top:2.5px;}
-#qh2_head{z-index:2;position:absolute;top:0%;width:100%;height: 65px;margin-left:0;margin-right:0;}
-#qh2_back_btn{z-index:2;width:130px;height:70px;margin-left:10px;margin-top:2.5px;}
-#qh_choose_card{z-index:0;width:270px;height:505px;position: absolute;margin-left: 14px;top:85px;background-size:100%;background-repeat:no-repeat;}
-#qh_choose_item{z-index:0;width:667px;height:157px;position: absolute;margin-left: 299px;top:158px;}
-#qh_choose_item:hover{cursor:pointer;}
-.qh_item_box{border-radius:5px;}
-#qh_littleitem1{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:1px;}
-#qh_littleitem2{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:68px;}
-#qh_littleitem3{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:135px;}
-#qh_littleitem4{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:202px;}
-#qh_littleitem5{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:269px;}
-#qh_littleitem6{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:336px;}
-#qh_littleitem7{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:403px;}
-#qh_littleitem8{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:470px;}
-#qh_littleitem9{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:537px;}
-#qh_littleitem10{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;left:604px;}
-#qh_littleitem11{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:1px;}
-#qh_littleitem12{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:68px;}
-#qh_littleitem13{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:135px;}
-#qh_littleitem14{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:202px;}
-#qh_littleitem15{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:269px;}
-#qh_littleitem16{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:336px;}
-#qh_littleitem17{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:403px;}
-#qh_littleitem18{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:470px;}
-#qh_littleitem19{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:537px;}
-#qh_littleitem20{z-index:0;width:63px;height:77px;position:absolute;background-repeat:no-repeat;top:81px;left:604px;}
-.qh_item_select{box-shadow:0 0 55px #00FFFF;-moz-box-shadow:0 0 55px #00FFFF;-webkit-box-shadow:0 0 55px #00FFFF;}
-.qh_servent_lv{font-size:0.5em;}
-#choose_item_head{z-index:2;position:absolute;top:0%;width:100%;height: 65px;margin-left:0;margin-right:0;display:none;}
-#qh3_back_btn{z-index:2;width:130px;height:70px;margin-left:10px;margin-top:2.5px;}
-#choose_item_ok{z-index:1;width:180px;height:70px;top:2px;border-radius: 15px;right:0px;position: absolute;font-size: 3em;}
-#qh_num{z-index:1;width:100%;height:70px;position:absolute;margin-top:73px;}
-#qh_num_servent{z-index:1;width:45px;position:absolute;height:50%;margin-left:19%;margin-top:15px;color:white;text-align: center;font-weight: bold;font-size: 2.1em;}
-#qh_num_item{z-index:1;width:40px;position:absolute;height:50%;margin-left:50.5%;margin-top:18px;color:white;text-align: center;font-weight: bold;font-size: 2.1em;}
-#qh_body{z-index:2;position: absolute;width:938px;height:461px;margin-left:40px;top:140px;background:url(images/tj_background.jpg);background-repeat: repeat-x;overflow-y: auto;}
-.qh_item{z-index:2;width:127px;height:153px;overflow: hidden;border-radius:15px;position:relative;margin-top:2%;margin-left: 10px;margin-right:10px;display:inline-block;border:4px #FFCC00 solid;border-bottom:0px #000 solid;}
-.qh_item_text{width:127px;bottom:10px;position: absolute;text-align: center;font-weight:600;opacity: 0.8;background-color: #ddd;}
-.qh_item_bottom_img{z-index:3;position:absolute;bottom:0px;width:100%;height:10px;}
-#qh_card    {z-index:0;position: absolute;background:url(images/card/servent_five_1.jpg);width:240px;height:411px;display:none;top:150px;left:370px;}
-#qh_level{z-index:0;width:30px;height:30px;position: absolute;margin-left: 350px;top:385px;background-size:100%;background-repeat:no-repeat;font-size:2em;color:#333;font-weight:600;}
-#qh_level_all{z-index:0;width:30px;height:30px;position: absolute;margin-left: 410px;top:385px;background-size:100%;background-repeat:no-repeat;font-size:2em;color:#333;font-weight:600;}
-#qh_exp{z-index:0;width:163px;height:12px;position: absolute;margin-left: 456px;top:395px;}
-#qh_exp_get{z-index:0;width:3%;height:12px;background-image:-webkit-linear-gradient(270deg, #FFCC33,#FF9900); background-image:linear-gradient(270deg,#FFCC33,#FF9900);border-radius:3px;box-shadow:inset 0 0 2px #000;}
-#qh_exp_remain{z-index:0;width:150px;height:30px;position: absolute;margin-left:620px;top:385px;font-size:1.6em;color:#FFF;font-weight:600;text-shadow:1px 1px 1px #000;}
-#qh_submit{z-index:0;position:absolute;bottom: 140px;left:70.6%;height: 70px;width:230px;font-size:3em;}
+#qh {
+  z-index: 0;
+  background: url('https://i.loli.net/2018/12/13/5c12325ecf3ed.jpg');
+  width: 980px;
+  height: 603px;
+}
+
+#qh2 {
+  z-index: 1;
+  background: url('https://i.loli.net/2018/12/13/5c12326e892c6.jpg');
+  width: 980px;
+  height: 603px;
+  display: none;
+}
+
+#qh_head {
+  z-index: 0;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#qh_back_btn {
+  z-index: 0;
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+}
+
+#qh2_head {
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#qh2_back_btn {
+  z-index: 2;
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+}
+
+#qh_choose_card {
+  z-index: 0;
+  width: 270px;
+  height: 505px;
+  position: absolute;
+  margin-left: 14px;
+  top: 85px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#qh_choose_item {
+  z-index: 0;
+  width: 667px;
+  height: 157px;
+  position: absolute;
+  margin-left: 299px;
+  top: 158px;
+}
+
+#qh_choose_item:hover {
+  cursor: pointer;
+}
+
+.qh_item_box {
+  border-radius: 5px;
+}
+
+#qh_littleitem1 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 1px;
+}
+
+#qh_littleitem2 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 68px;
+}
+
+#qh_littleitem3 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 135px;
+}
+
+#qh_littleitem4 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 202px;
+}
+
+#qh_littleitem5 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 269px;
+}
+
+#qh_littleitem6 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 336px;
+}
+
+#qh_littleitem7 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 403px;
+}
+
+#qh_littleitem8 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 470px;
+}
+
+#qh_littleitem9 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 537px;
+}
+
+#qh_littleitem10 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 604px;
+}
+
+#qh_littleitem11 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 1px;
+}
+
+#qh_littleitem12 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 68px;
+}
+
+#qh_littleitem13 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 135px;
+}
+
+#qh_littleitem14 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 202px;
+}
+
+#qh_littleitem15 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 269px;
+}
+
+#qh_littleitem16 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 336px;
+}
+
+#qh_littleitem17 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 403px;
+}
+
+#qh_littleitem18 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 470px;
+}
+
+#qh_littleitem19 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 537px;
+}
+
+#qh_littleitem20 {
+  z-index: 0;
+  width: 63px;
+  height: 77px;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 81px;
+  left: 604px;
+}
+
+.qh_item_select {
+  box-shadow: 0 0 55px #00FFFF;
+  -moz-box-shadow: 0 0 55px #00FFFF;
+  -webkit-box-shadow: 0 0 55px #00FFFF;
+}
+
+.qh_servent_lv {
+  font-size: 0.5em;
+}
+
+#choose_item_head {
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  margin-right: 0;
+  display: none;
+}
+
+#qh3_back_btn {
+  z-index: 2;
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+}
+
+#choose_item_ok {
+  z-index: 1;
+  width: 180px;
+  height: 70px;
+  top: 2px;
+  border-radius: 15px;
+  right: 0px;
+  position: absolute;
+  font-size: 3em;
+}
+
+#qh_num {
+  z-index: 1;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  margin-top: 73px;
+}
+
+#qh_num_servent {
+  z-index: 1;
+  width: 45px;
+  position: absolute;
+  height: 50%;
+  margin-left: 19%;
+  margin-top: 15px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+#qh_num_item {
+  z-index: 1;
+  width: 40px;
+  position: absolute;
+  height: 50%;
+  margin-left: 50.5%;
+  margin-top: 18px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+#qh_body {
+  z-index: 2;
+  position: absolute;
+  width: 938px;
+  height: 461px;
+  margin-left: 40px;
+  top: 140px;
+  background: url('https://i.loli.net/2018/12/13/5c12329572863.jpg');
+  background-repeat: repeat-x;
+  overflow-y: auto;
+}
+
+.qh_item {
+  z-index: 2;
+  width: 127px;
+  height: 153px;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  border: 4px #FFCC00 solid;
+  border-bottom: 0px #000 solid;
+}
+
+.qh_item_text {
+  width: 127px;
+  bottom: 10px;
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0.8;
+  background-color: #ddd;
+}
+
+.qh_item_bottom_img {
+  z-index: 3;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10px;
+}
+
+#qh_card {
+  z-index: 0;
+  position: absolute;
+  background: url(images/card/servent_five_1.jpg);
+  width: 240px;
+  height: 411px;
+  display: none;
+  top: 150px;
+  left: 370px;
+}
+
+#qh_level {
+  z-index: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-left: 350px;
+  top: 385px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-size: 2em;
+  color: #333;
+  font-weight: 600;
+}
+
+#qh_level_all {
+  z-index: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-left: 410px;
+  top: 385px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-size: 2em;
+  color: #333;
+  font-weight: 600;
+}
+
+#qh_exp {
+  z-index: 0;
+  width: 163px;
+  height: 12px;
+  position: absolute;
+  margin-left: 456px;
+  top: 395px;
+}
+
+#qh_exp_get {
+  z-index: 0;
+  width: 3%;
+  height: 12px;
+  background-image: -webkit-linear-gradient(270deg, #FFCC33, #FF9900);
+  background-image: linear-gradient(270deg, #FFCC33, #FF9900);
+  border-radius: 3px;
+  box-shadow: inset 0 0 2px #000;
+}
+
+#qh_exp_remain {
+  z-index: 0;
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  margin-left: 620px;
+  top: 385px;
+  font-size: 1.6em;
+  color: #FFF;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #000;
+}
+
+#qh_submit {
+  z-index: 0;
+  position: absolute;
+  bottom: 140px;
+  left: 70.6%;
+  height: 70px;
+  width: 230px;
+  font-size: 3em;
+}
+
 /***--------------------------打工页面--------------------------------------***/
-#dg{background:url(images/dg.jpg);width:980px;height:603px;z-index:0;}
-#dg_head{position:absolute;top:0%;width:100%;height: 65px;margin-left:0;margin-right:0;}
-#dg_back_btn{width:130px;height:70px;margin-left:10px;margin-top:2.5px;}
-#dg_post{width:130px;height:60px;font-size:1.5em;position: absolute;right:20px;top:5px;}
-#dg_check{width:130px;height:60px;font-size:1.5em;position: absolute;right:20px;top:5px;display: none;}
-#dg_get_money{position: absolute;background:#FFF;width:400px;height:300px;display:none;z-index:1;top:150px;left:300px;box-shadow: 0px 3px 3px 5px #888888;-moz-box-shadow: 0px 3px 3px 5px #888888;-webkit-box-shadow: 0px 3px 3px 5px #888888;}
-#buy_dg_block_model{position: absolute;background:#FFF;width:400px;height:300px;display:none;z-index:1;top:150px;left:300px;box-shadow: 0px 3px 3px 5px #888888;-moz-box-shadow: 0px 3px 3px 5px #888888;-webkit-box-shadow: 0px 3px 3px 5px #888888;}
-#dg_cont{position: absolute;width:959px;height:352px;margin-left:11px;margin-top: 90px;}
-#dg_servent1{width:119px;height:322px;margin-left:1px;margin-top:24px;position:absolute;border-radius: 25px;}
-#dg_servent2{width:119px;height:322px;margin-left:120px;margin-top:24px;position:absolute;border-radius: 25px;}
-#dg_servent3{width:119px;height:322px;margin-left:240px;margin-top:24px;position:absolute;border-radius: 25px;}
-#dg_servent4{width:119px;height:322px;margin-left:360px;margin-top:24px;position:absolute;border-radius: 25px;}
-#dg_servent5{width:119px;height:322px;margin-left:480px;margin-top:24px;position:absolute;border-radius: 25px;}
-#dg_servent6{width:119px;height:322px;margin-left:600px;margin-top:24px;position:absolute;border-radius: 25px;}
-#dg_servent7{width:119px;height:322px;margin-left:719px;margin-top:24px;position:absolute;border-radius: 25px;}
-#dg_servent8{width:119px;height:322px;margin-left:839px;margin-top:24px;position:absolute;border-radius: 25px;}
-#dg_servent_text1{width:119px;bottom:0px;position: absolute;text-align:center;opacity: 0.8;font-weight:normal;color:#000;background-color: #ddd;font-size:1.3em;}
-#dg_servent_text2{width:119px;bottom:0px;position: absolute;text-align:center;opacity: 0.8;font-weight:normal;color:#000;background-color: #ddd;font-size:1.3em;}
-#dg_servent_text3{width:119px;bottom:0px;position: absolute;text-align:center;opacity: 0.8;font-weight:normal;color:#000;background-color: #ddd;font-size:1.3em;}
-#dg_servent_text4{width:119px;bottom:0px;position: absolute;text-align:center;opacity: 0.8;font-weight:normal;color:#000;background-color: #ddd;font-size:1.3em;}
-#dg_servent_text5{width:119px;bottom:0px;position: absolute;text-align:center;opacity: 0.8;font-weight:normal;color:#000;background-color: #ddd;font-size:1.3em;}
-#dg_servent_text6{width:119px;bottom:0px;position: absolute;text-align:center;opacity: 0.8;font-weight:normal;color:#000;background-color: #ddd;font-size:1.3em;}
-#dg_servent_text7{width:119px;bottom:0px;position: absolute;text-align:center;opacity: 0.8;font-weight:normal;color:#000;background-color: #ddd;font-size:1.3em;}
-#dg_servent_text8{width:119px;bottom:0px;position: absolute;text-align:center;opacity: 0.8;font-weight:normal;color:#000;background-color: #ddd;font-size:1.3em;}
-#dg2{z-index:2;background:url(images/dg2.jpg);width:980px;height:603px;display:none;}
-#dg_num{width:100%;height:70px;position:absolute;margin-top:73px;}
-#dg_num_servent{width:45px;position:absolute;height:50%;margin-left:19%;margin-top:15px;color:white;text-align: center;font-weight: bold;font-size: 2.1em;}
-#dg_num_item{width:40px;position:absolute;height:50%;margin-left:50.5%;margin-top:18px;color:white;text-align: center;font-weight: bold;font-size: 2.1em;}
-#dg_body{position: absolute;width:938px;height:461px;margin-left:40px;top:140px;background:url(images/tj_background.jpg);background-repeat: repeat-x;z-index:1;overflow-y: auto;}
-.dg_item{width:127px;height:153px;overflow: hidden;border-radius:15px;position:relative;margin-top:2%;margin-left: 10px;margin-right:10px;display:inline-block;border:4px #FFCC00 solid;border-bottom:0px #000 solid;z-index:2;}
-.dg_item_text{width:127px;bottom:10px;position: absolute;text-align: center;font-weight:600;opacity: 0.8;background-color: #ddd;}
-.dg_item_bottom_img{position:absolute;bottom:0px;width:100%;height:10px;z-index:3;}
-.dg_item_select{box-shadow:0 0 55px #00FFFF;-moz-box-shadow:0 0 55px #00FFFF;-webkit-box-shadow:0 0 55px #00FFFF;}
-#dg_bottom_btn{position:absolute;top:533px;left:15px;width:430px;height:70px;}
-#buy_dg_block{margin:2px 0px 2px 2px;width:136px;height:60px;font-size: 1.3em;}
-#dg_info{margin:2px 0px 2px 10px;width:274px;height:60px;font-size: 2em;}
-.dg_block_disable{width:100%;height:100%;background-color:#eee;opacity:0.5;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;cursor: not-allowed;font-size:3em;padding:30% 30%;font-weight:bold;}
+#dg {
+  background: url('https://i.loli.net/2018/12/13/5c12316bd2c8f.jpg');
+  width: 980px;
+  height: 603px;
+  z-index: 0;
+}
+
+#dg_head {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#dg_back_btn {
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+}
+
+#dg_post {
+  width: 130px;
+  height: 60px;
+  font-size: 1.5em;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
+#dg_check {
+  width: 130px;
+  height: 60px;
+  font-size: 1.5em;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  display: none;
+}
+
+#dg_get_money {
+  position: absolute;
+  background: #FFF;
+  width: 400px;
+  height: 300px;
+  display: none;
+  z-index: 1;
+  top: 150px;
+  left: 300px;
+  box-shadow: 0px 3px 3px 5px #888888;
+  -moz-box-shadow: 0px 3px 3px 5px #888888;
+  -webkit-box-shadow: 0px 3px 3px 5px #888888;
+}
+
+#buy_dg_block_model {
+  position: absolute;
+  background: #FFF;
+  width: 400px;
+  height: 300px;
+  display: none;
+  z-index: 1;
+  top: 150px;
+  left: 300px;
+  box-shadow: 0px 3px 3px 5px #888888;
+  -moz-box-shadow: 0px 3px 3px 5px #888888;
+  -webkit-box-shadow: 0px 3px 3px 5px #888888;
+}
+
+#dg_cont {
+  position: absolute;
+  width: 959px;
+  height: 352px;
+  margin-left: 11px;
+  margin-top: 90px;
+}
+
+#dg_servent1 {
+  width: 119px;
+  height: 322px;
+  margin-left: 1px;
+  margin-top: 24px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+#dg_servent2 {
+  width: 119px;
+  height: 322px;
+  margin-left: 120px;
+  margin-top: 24px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+#dg_servent3 {
+  width: 119px;
+  height: 322px;
+  margin-left: 240px;
+  margin-top: 24px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+#dg_servent4 {
+  width: 119px;
+  height: 322px;
+  margin-left: 360px;
+  margin-top: 24px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+#dg_servent5 {
+  width: 119px;
+  height: 322px;
+  margin-left: 480px;
+  margin-top: 24px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+#dg_servent6 {
+  width: 119px;
+  height: 322px;
+  margin-left: 600px;
+  margin-top: 24px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+#dg_servent7 {
+  width: 119px;
+  height: 322px;
+  margin-left: 719px;
+  margin-top: 24px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+#dg_servent8 {
+  width: 119px;
+  height: 322px;
+  margin-left: 839px;
+  margin-top: 24px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+#dg_servent_text1 {
+  width: 119px;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: normal;
+  color: #000;
+  background-color: #ddd;
+  font-size: 1.3em;
+}
+
+#dg_servent_text2 {
+  width: 119px;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: normal;
+  color: #000;
+  background-color: #ddd;
+  font-size: 1.3em;
+}
+
+#dg_servent_text3 {
+  width: 119px;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: normal;
+  color: #000;
+  background-color: #ddd;
+  font-size: 1.3em;
+}
+
+#dg_servent_text4 {
+  width: 119px;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: normal;
+  color: #000;
+  background-color: #ddd;
+  font-size: 1.3em;
+}
+
+#dg_servent_text5 {
+  width: 119px;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: normal;
+  color: #000;
+  background-color: #ddd;
+  font-size: 1.3em;
+}
+
+#dg_servent_text6 {
+  width: 119px;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: normal;
+  color: #000;
+  background-color: #ddd;
+  font-size: 1.3em;
+}
+
+#dg_servent_text7 {
+  width: 119px;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: normal;
+  color: #000;
+  background-color: #ddd;
+  font-size: 1.3em;
+}
+
+#dg_servent_text8 {
+  width: 119px;
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: normal;
+  color: #000;
+  background-color: #ddd;
+  font-size: 1.3em;
+}
+
+#dg2 {
+  z-index: 2;
+  background: url('https://i.loli.net/2018/12/13/5c12318ad0128.jpg');
+  width: 980px;
+  height: 603px;
+  display: none;
+}
+
+#dg_num {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  margin-top: 73px;
+}
+
+#dg_num_servent {
+  width: 45px;
+  position: absolute;
+  height: 50%;
+  margin-left: 19%;
+  margin-top: 15px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+#dg_num_item {
+  width: 40px;
+  position: absolute;
+  height: 50%;
+  margin-left: 50.5%;
+  margin-top: 18px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+#dg_body {
+  position: absolute;
+  width: 938px;
+  height: 461px;
+  margin-left: 40px;
+  top: 140px;
+  background: url('https://i.loli.net/2018/12/13/5c12329572863.jpg');
+  background-repeat: repeat-x;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.dg_item {
+  width: 127px;
+  height: 153px;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  border: 4px #FFCC00 solid;
+  border-bottom: 0px #000 solid;
+  z-index: 2;
+}
+
+.dg_item_text {
+  width: 127px;
+  bottom: 10px;
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0.8;
+  background-color: #ddd;
+}
+
+.dg_item_bottom_img {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10px;
+  z-index: 3;
+}
+
+.dg_item_select {
+  box-shadow: 0 0 55px #00FFFF;
+  -moz-box-shadow: 0 0 55px #00FFFF;
+  -webkit-box-shadow: 0 0 55px #00FFFF;
+}
+
+#dg_bottom_btn {
+  position: absolute;
+  top: 533px;
+  left: 15px;
+  width: 430px;
+  height: 70px;
+}
+
+#buy_dg_block {
+  margin: 2px 0px 2px 2px;
+  width: 136px;
+  height: 60px;
+  font-size: 1.3em;
+}
+
+#dg_info {
+  margin: 2px 0px 2px 10px;
+  width: 274px;
+  height: 60px;
+  font-size: 2em;
+}
+
+.dg_block_disable {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  cursor: not-allowed;
+  font-size: 3em;
+  padding: 30% 30%;
+  font-weight: bold;
+}
+
 /***--------------------------公告页面--------------------------------------***/
-#gg{background:url(images/gg.jpg);width:980px;height:603px;z-index:0;}
-#gg_head{position:absolute;top:0%;width:100%;height:65px;margin-left:0;margin-right:0;}
-#gg_back_btn{width:52px;height:60px;margin-left:928px;margin-top:0px;}
-#gg_body{position: absolute;width:730px;height:450px;margin-left:130px;top:140px;z-index:1;overflow-y:auto;background:url(images/money_background.jpg);background-repeat: repeat;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
-.gg_each{width:700px;height:60px;margin-left:10px;top:150px;margin-top:20px;text-align:center;border-radius: 20px;z-index:2;overflow:hidden;font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;font-size: 3em;background-color: rgb(10,59,125);color:#fff;}
-.gg_each_content{display:none;padding: 10px;width:700px;height:0px;margin-left:10px;margin-top:10px;border: 1px #aaa solid;text-align: left;border-radius: 20px;z-index:3;overflow-y: auto;font-weight: 600;font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;font-size:1.6em;background:url(images/money_background.jpg);color:#555;}
-.gg_each_content img{margin-left: 20px;}
+#gg {
+  background: url('https://i.loli.net/2018/12/13/5c1231bee3772.jpg');
+  width: 980px;
+  height: 603px;
+  z-index: 0;
+}
+
+#gg_head {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#gg_back_btn {
+  width: 52px;
+  height: 60px;
+  margin-left: 928px;
+  margin-top: 0px;
+}
+
+#gg_body {
+  position: absolute;
+  width: 730px;
+  height: 450px;
+  margin-left: 130px;
+  top: 140px;
+  z-index: 1;
+  overflow-y: auto;
+  background: url('https://i.loli.net/2018/12/13/5c12322d5dd35.jpg');
+  background-repeat: repeat;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gg_each {
+  width: 700px;
+  height: 60px;
+  margin-left: 10px;
+  top: 150px;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 20px;
+  z-index: 2;
+  overflow: hidden;
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  font-size: 3em;
+  background-color: rgb(10, 59, 125);
+  color: #fff;
+}
+
+.gg_each_content {
+  display: none;
+  padding: 10px;
+  width: 700px;
+  height: 0px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 1px #aaa solid;
+  text-align: left;
+  border-radius: 20px;
+  z-index: 3;
+  overflow-y: auto;
+  font-weight: 600;
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  font-size: 1.6em;
+  background: url('https://i.loli.net/2018/12/13/5c12322d5dd35.jpg');
+  color: #555;
+}
+
+.gg_each_content img {
+  margin-left: 20px;
+}
+
 /***--------------------------物品页面--------------------------------------***/
-#wp{background:url(images/wp.jpg);width:980px;height:603px;z-index:0;}
-#wp_head{position:absolute;top:0%;width:100%;height: 65px;margin-left:0;margin-right:0;}
-#wp_back_btn{width:130px;height:70px;margin-left:10px;margin-top:2.5px;}
-#wp_num{width:100%;height:70px;position:absolute;margin-top:73px;}
-#wp_num_servent{width:45px;position:absolute;height:50%;margin-left:19%;margin-top:15px;color:white;text-align: center;font-weight: bold;font-size: 2.1em;}
-#wp_num_item{width:40px;position:absolute;height:50%;margin-left:50.5%;margin-top:18px;color:white;text-align: center;font-weight: bold;font-size: 2.1em;}
-#wp_body{position: absolute;width:938px;height:461px;margin-left:40px;top:140px;background:url(images/tj_background.jpg);background-repeat: repeat-x;z-index:1;overflow-y: auto;}
-.wp_item{width:127px;height:153px;overflow: hidden;border-radius:15px;position:relative;margin-top:2%;margin-left: 10px;margin-right:10px;display:inline-block;border:4px #FFCC00 solid;border-bottom:0px #000 solid;z-index:2;}
-.wp_item_text{width:127px;bottom:10px;position: absolute;text-align: center;font-weight:600;opacity: 0.8;background-color: #ddd;}
-.wp_item_bottom_img{position:absolute;bottom:0px;width:100%;height:10px;z-index:3;}
-#wp_card    {position: absolute;background:url(images/card/servent_five_1.jpg);width:240px;height:411px;display:none;z-index:5;top:150px;left:370px;}
+#wp {
+  background: url('https://i.loli.net/2018/12/13/5c1233155936e.jpg');
+  width: 980px;
+  height: 603px;
+  z-index: 0;
+}
+
+#wp_head {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#wp_back_btn {
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+}
+
+#wp_num {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  margin-top: 73px;
+}
+
+#wp_num_servent {
+  width: 45px;
+  position: absolute;
+  height: 50%;
+  margin-left: 19%;
+  margin-top: 15px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+#wp_num_item {
+  width: 40px;
+  position: absolute;
+  height: 50%;
+  margin-left: 50.5%;
+  margin-top: 18px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+#wp_body {
+  position: absolute;
+  width: 938px;
+  height: 461px;
+  margin-left: 40px;
+  top: 140px;
+  background: url('https://i.loli.net/2018/12/13/5c12329572863.jpg');
+  background-repeat: repeat-x;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.wp_item {
+  width: 127px;
+  height: 153px;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  border: 4px #FFCC00 solid;
+  border-bottom: 0px #000 solid;
+  z-index: 2;
+}
+
+.wp_item_text {
+  width: 127px;
+  bottom: 10px;
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0.8;
+  background-color: #ddd;
+}
+
+.wp_item_bottom_img {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10px;
+  z-index: 3;
+}
+
+#wp_card {
+  position: absolute;
+  background: url(images/card/servent_five_1.jpg);
+  width: 240px;
+  height: 411px;
+  display: none;
+  z-index: 5;
+  top: 150px;
+  left: 370px;
+}
+
 /***--------------------------交易页面--------------------------------------***/
-#jy{background:url(images/jy1.jpg);width:980px;height:603px;z-index:0;position: relative;}
-#jy_info_model{position: absolute;background:#FFF;width:400px;height:300px;z-index:9999;display:none;top:150px;left:300px;box-shadow: 0px 1px 1px 2px #888888;-moz-box-shadow: 0px 1px 1px 2px #888888;-webkit-box-shadow: 0px 1px 1px 2px #888888;}
-#jy_model{position: absolute;background:#FFF;width:400px;height:300px;z-index:9999;display:none;top:150px;left:300px;box-shadow: 0px 1px 1px 2px #888888;-moz-box-shadow: 0px 1px 1px 2px #888888;-webkit-box-shadow: 0px 1px 1px 2px #888888;}
-.jy_panel_body{border:1px #bce8f1 solid;height:190px;margin-top:7px;margin-left:5px;margin-right:5px;padding:5px;}
-#jy_head{position:absolute;top:0%;width:100%;height: 65px;margin-left:0;margin-right:0;}
-#jy_back_btn{width:130px;height:70px;margin-left:10px;margin-top:2.5px;position:absolute;}
-#jy_change_item{width:130px;height:70px;right:10px;top:2.5px;position:absolute;}
-#jy_change_item_btn{width:130px;height:60px;font-size:2em;margin-top:5px;}
-#jy_body{position:absolute;width:980px;height:463px;padding-left:40px;top:140px;background:url(images/tj_background.jpg);background-repeat: repeat-x;z-index:1;overflow-y:auto;}
-.jy_item{position:relative;;width:891px;height:153px;background:url(images/jy_body.jpg);background-repeat: no-repeat;margin:2% 0% 2% 0%;padding: 0;}
-.jy_pic{position: absolute;width:125px;height:150px;overflow: hidden;margin:1px;display:inline-block;border-radius:10px;background:url('images/card/servent_five_1_strength1.jpg');background-position:60% 10%;background-repeat:no-repeat;border:2px #FFCC00 solid;}
-.jy_pic_bottom_img{position:absolute;bottom:0px;width:100%;height:10px;background: url('images/servent_bottom3.jpg');}
-.jy_sold_name{position:absolute;margin-left:150px;margin-top:10px;height:36px;width:435px;overflow: hidden;color:#fff;font-size:2em;font-weight: bold;font-family: cursive;text-shadow:2px 2px 2px #000;}
-.jy_servent_level{position:absolute;margin-left:600px;margin-top:10px;height:36px;width:270px;overflow: hidden;color:#fff;font-size:2em;font-weight: bold;font-family: cursive;text-shadow:2px 2px 2px #000;}
-.jy_servent_name{position:absolute;margin-left:150px;margin-top:70px;height:30px;width:435px;overflow: hidden;color:#fff;font-size:1.5em;font-weight: bold;font-family: cursive;text-shadow:2px 2px 2px #000;}
-.jy_price{position:absolute;margin-left:150px;margin-top:100px;height:30px;width:435px;overflow: hidden;color:#fff;font-size:1.5em;font-weight: bold;font-family: cursive;text-shadow:2px 2px 2px #000;}
-.jy_confirm{position: absolute;width:167px;height:57px;margin-left:666px;margin-top:73px;}
-.jy_confirm_button{width:140px;height:57px;font-size:2.3em!important;}
-.jy_cancel_button{width:140px;height:57px;font-size:2.3em!important;}
+#jy {
+  background: url('https://i.loli.net/2018/12/13/5c123206efb98.jpg');
+  width: 980px;
+  height: 603px;
+  z-index: 0;
+  position: relative;
+}
+
+#jy_info_model {
+  position: absolute;
+  background: #FFF;
+  width: 400px;
+  height: 300px;
+  z-index: 9999;
+  display: none;
+  top: 150px;
+  left: 300px;
+  box-shadow: 0px 1px 1px 2px #888888;
+  -moz-box-shadow: 0px 1px 1px 2px #888888;
+  -webkit-box-shadow: 0px 1px 1px 2px #888888;
+}
+
+#jy_model {
+  position: absolute;
+  background: #FFF;
+  width: 400px;
+  height: 300px;
+  z-index: 9999;
+  display: none;
+  top: 150px;
+  left: 300px;
+  box-shadow: 0px 1px 1px 2px #888888;
+  -moz-box-shadow: 0px 1px 1px 2px #888888;
+  -webkit-box-shadow: 0px 1px 1px 2px #888888;
+}
+
+.jy_panel_body {
+  border: 1px #bce8f1 solid;
+  height: 190px;
+  margin-top: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+#jy_head {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#jy_back_btn {
+  width: 130px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: 2.5px;
+  position: absolute;
+}
+
+#jy_change_item {
+  width: 130px;
+  height: 70px;
+  right: 10px;
+  top: 2.5px;
+  position: absolute;
+}
+
+#jy_change_item_btn {
+  width: 130px;
+  height: 60px;
+  font-size: 2em;
+  margin-top: 5px;
+}
+
+#jy_body {
+  position: absolute;
+  width: 980px;
+  height: 463px;
+  padding-left: 40px;
+  top: 140px;
+  background: url('https://i.loli.net/2018/12/13/5c12329572863.jpg');
+  background-repeat: repeat-x;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.jy_item {
+  position: relative;
+  ;
+  width: 891px;
+  height: 153px;
+  background: url('https://i.loli.net/2018/12/13/5c1231f4a3952.jpg');
+  background-repeat: no-repeat;
+  margin: 2% 0% 2% 0%;
+  padding: 0;
+}
+
+.jy_pic {
+  position: absolute;
+  width: 125px;
+  height: 150px;
+  overflow: hidden;
+  margin: 1px;
+  display: inline-block;
+  border-radius: 10px;
+  background: url('images/card/servent_five_1_strength1.jpg');
+  background-position: 60% 10%;
+  background-repeat: no-repeat;
+  border: 2px #FFCC00 solid;
+}
+
+.jy_pic_bottom_img {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10px;
+  background: url('images/servent_bottom3.jpg');
+}
+
+.jy_sold_name {
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 10px;
+  height: 36px;
+  width: 435px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: cursive;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.jy_servent_level {
+  position: absolute;
+  margin-left: 600px;
+  margin-top: 10px;
+  height: 36px;
+  width: 270px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: cursive;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.jy_servent_name {
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 70px;
+  height: 30px;
+  width: 435px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: cursive;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.jy_price {
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 100px;
+  height: 30px;
+  width: 435px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: cursive;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.jy_confirm {
+  position: absolute;
+  width: 167px;
+  height: 57px;
+  margin-left: 666px;
+  margin-top: 73px;
+}
+
+.jy_confirm_button {
+  width: 140px;
+  height: 57px;
+  font-size: 2.3em !important;
+}
+
+.jy_cancel_button {
+  width: 140px;
+  height: 57px;
+  font-size: 2.3em !important;
+}
+
 /***--------------------------底部按钮--------------------------------------***/
-.function_pannel{z-index:5;position:absolute;right:0;width:99%;height:70px;bottom:2px;background:#ddd;border-radius:5px;box-shadow: 2px 2px 1px #888888;-moz-box-shadow: 2px 2px 1px #888888;-webkit-box-shadow: 2px 2px 1px #888888;background:url(images/tj_background.jpg);background-repeat: repeat-x;}
-.function_pannel button{width:100px;height:50px;margin-left:30px;margin-top:10px;border-radius: 15px;}
-#all_voice{position: absolute;right:10px;top:10px;height:20px;cursor:pointer;}
-#all_voice i{margin-left:0px;margin-top:20px;}
+.function_pannel {
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  width: 99%;
+  height: 70px;
+  bottom: 2px;
+  background: #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px #888888;
+  -moz-box-shadow: 2px 2px 1px #888888;
+  -webkit-box-shadow: 2px 2px 1px #888888;
+  background: url('https://i.loli.net/2018/12/13/5c12329572863.jpg');
+  background-repeat: repeat-x;
+}
+
+.function_pannel button {
+  width: 100px;
+  height: 50px;
+  margin-left: 30px;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+#all_voice {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#all_voice i {
+  margin-left: 0px;
+  margin-top: 20px;
+}
