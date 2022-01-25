@@ -1,4 +1,7 @@
 # FateGrend0rder
+A h5 game for Fate Grand Order. An immature project when I started to learn webpage development.
+It helped me to learn how to deploy a backend server and maintain the stability, and also helped me to learn how to developed continously for a project.
+There was several players who really interested in this game. They helped me to design the values in this game like earning money amount, consuming money amount and growth of cards.
 FGO抽卡模拟器，页游。闲暇之时做的，为了满足自己集齐全SSR的愿望，和满破所有低星级卡的愿望。
 <br/>
 代码部署在一个测试服务器上，有兴趣的月厨可以来抽卡，但是服务器很卡，图片加载效果不是很好。
@@ -29,7 +32,7 @@ MIT
 
 > English Version Readme
 # FateGrend0rder
-FGO draw simulator, H5 page game. I do it in my spare time, in order to satisfy my desire to collect all the SSRs and the desire to update all low-star cards.
+FGO draw simulator, H5 page game. I do it in my spare time when I started to learn frontend in order to satisfy my desire to collect all the SSRs and the desire to update all low-star cards.
 <br/>
 Deploy on a test server. If you are interested in FGO, you can try it. However, due to the server performance, loading page will cost some time, especially for big images.
 <br />
